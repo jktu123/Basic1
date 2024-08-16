@@ -15,6 +15,7 @@ namespace Code
             //UnityEngine.Debug.LogError(message:1); // надо писать UnityEngine
         }
 
+
         private void First()
         {
             int a = 1;
@@ -95,7 +96,7 @@ namespace Code
         {
             // UnityEngine.Debug.LogError(message:3);
         }
-        
+
 
     }
 }
