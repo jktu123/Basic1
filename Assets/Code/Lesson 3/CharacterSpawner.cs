@@ -11,12 +11,10 @@ namespace Code.LessonThree
     public class CharacterSpawner : MonoBehaviour
     {
         public Character Character; // Можно так а можно как ниже 
-                                    //public GameObject Character;
+        //public GameObject Character;
         public Transform Point;
         public int[] Array;
         private GameObject[] _items = new GameObject[10];
-
-
 
         private void Start()
         {
