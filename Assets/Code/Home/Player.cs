@@ -8,18 +8,16 @@ namespace Code.HomeThree
 {
     public class Player : MonoBehaviour
     {
-        public int Health;
+        public int Health = 100;
         public bool Enemy;
         public bool IsDead;
 
-        private void ObjectColor()
-        {
-            GetComponent<MeshRenderer>().material.color = Color.grey;
-        }
-
         private void Start()
         {
-            ObjectColor();
+            MeshRenderer addComponent = gameObject.GetComponent<MeshRenderer>();
+            addComponent.material.color = Color.grey;
+            //gameObject.GetComponent<MeshRenderer>().sharedMaterial.color = Color.grey;
+   
             Health = 100;
         }
 
@@ -29,12 +27,10 @@ namespace Code.HomeThree
             {
                 IsDead = true;
             }
-
             if (IsDead)
             {
                 Destroy(gameObject);
             }
-
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 MeshRenderer addComponent = gameObject.GetComponent<MeshRenderer>();
@@ -44,15 +40,17 @@ namespace Code.HomeThree
 
         public void OnValidate()
         {
-
             if (Enemy)
             {
-                GetComponent<MeshRenderer>().material.color = Color.red;
+                gameObject.GetComponent<MeshRenderer>().sharedMaterial.color = Color.red;
                 UnityEngine.Debug.Log("Character is Enemy");
             }
+
             else
             {
-                GetComponent<MeshRenderer>().material.color = Color.blue;
+                //MeshRenderer addComponent = gameObject.GetComponent<MeshRenderer>();
+                //addComponent.sharedMaterial.color = Color.blue;                
+                gameObject.GetComponent<MeshRenderer>().sharedMaterial.color = Color.blue;
                 UnityEngine.Debug.Log("Character is Ally");
             }
         }

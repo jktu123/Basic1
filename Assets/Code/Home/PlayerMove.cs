@@ -41,8 +41,8 @@ namespace Code.HomeThree
 
             Vector3 targetFirstVertical = Target.forward * directionVertical;
             Vector3 targetFirstHorizontal = Target.right * directionHorizontal;
-
             Target.position += (targetFirstVertical + targetFirstHorizontal) * Speed * Time.deltaTime;
+
         }
 
     }

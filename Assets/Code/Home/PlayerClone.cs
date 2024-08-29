@@ -13,10 +13,10 @@ namespace Code.HomeThree
 
         private void Start()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 3; i++)
             {
-                _player = Instantiate(Clone, new Vector3(-i, 1, 0), Quaternion.identity);
-                _player.name = $"Clone {i+1}";
+                _player = Instantiate(Clone, new Vector3(-i, 0.5f, 1), Quaternion.identity);
+                _player.name = $"Player Clone {i+1}";
             }
         }
 
@@ -31,7 +31,7 @@ namespace Code.HomeThree
             {
                 Destroy(_player.gameObject);
                 // Destroy(_player.GetComponent<___>()) //удаление компанента на объекте
-                // _player.gameObject.AddComponent<Rigidbody>(); //боращение к компаненту
+                // _player.gameObject.AddComponent<Rigidbody>(); //обращение к компаненту
             }
         }
 
@@ -39,6 +39,7 @@ namespace Code.HomeThree
         {
 
         }
+
     }
 }
 
